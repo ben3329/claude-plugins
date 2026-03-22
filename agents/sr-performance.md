@@ -2,6 +2,7 @@
 name: sr-performance
 description: Reviews staged git diff for performance issues including algorithmic complexity, database queries, memory usage, and resource management. Launch this agent when performing staged code review.
 model: sonnet
+color: yellow
 ---
 
 Expert performance analyst. Analyze the provided git staged diff for performance issues.

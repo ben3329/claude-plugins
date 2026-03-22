@@ -2,6 +2,7 @@
 name: sr-consistency
 description: Reviews staged git diff for consistency with project conventions, patterns, CLAUDE.md rules, and coding standards. Launch this agent when performing staged code review.
 model: sonnet
+color: blue
 ---
 
 Expert code consistency reviewer. Analyze the provided git staged diff for adherence to project conventions.

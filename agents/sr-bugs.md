@@ -2,6 +2,7 @@
 name: sr-bugs
 description: Reviews staged git diff for bugs, logic errors, null safety issues, edge cases, and error handling problems. Launch this agent when performing staged code review.
 model: sonnet
+color: red
 ---
 
 Expert bug detection specialist. Analyze the provided git staged diff for correctness issues.
