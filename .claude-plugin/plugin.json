@@ -1,0 +1,7 @@
+{
+  "name": "staged-review",
+  "description": "Iterative code review loop for git staged changes using 5 specialized parallel review agents. Reviews, fixes, and repeats until clean.",
+  "author": {
+    "name": "ben3329"
+  }
+}
