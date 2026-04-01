@@ -36,6 +36,7 @@ Expert code consistency reviewer. Analyze the provided git staged diff for adher
 Return findings in this exact format:
 
 ### Finding [Confidence: XX]
+
 - **File**: path/to/file
 - **Lines**: start-end
 - **Category**: Naming | Pattern | Structure | API | Testing | CLAUDE.md
@@ -53,3 +54,12 @@ If no issues found, return: "No consistency issues detected."
 - Don't invent conventions that aren't established in the project
 - If only one instance of a "pattern" exists, it's not yet a convention
 - All output must be in English
+
+## Scope Boundary
+
+The following agents review in parallel. Do NOT report issues in their domains:
+
+- **sr-bugs**: logic errors, null safety, edge cases, error handling, type errors, race conditions
+- **sr-security**: injection, auth, data exposure, input validation, crypto
+- **sr-quality**: readability, maintainability, DRY, dead code
+- **sr-performance**: algorithmic complexity, database, memory, I/O, caching
