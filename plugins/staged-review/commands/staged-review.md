@@ -1,5 +1,6 @@
 ---
 description: Iterative code review loop on staged changes with 5 parallel specialized agents. Fixes issues and repeats until clean.
+allowed-tools: [Bash, Edit, Agent, Read, Glob, Grep]
 ---
 
 Perform an iterative code review on all git staged changes using 5 specialized review agents in parallel. Fix identified issues and repeat until clean.
