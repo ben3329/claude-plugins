@@ -88,7 +88,7 @@ If 5 iterations reached with remaining issues, list the unfixed issues and STOP.
 
 ## Rules
 
-- All review output must be in English
+- All user-facing output (summary tables, reports, messages) must be in the user's language. Detect the language from the user's most recent message. Internal agent prompts remain in English.
 - Never modify unstaged files
 - Never remove or revert the user's original staged changes — only improve them
 - When a fix is ambiguous or risky, skip it and report it to the user instead
