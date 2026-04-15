@@ -3,6 +3,7 @@ name: sr-quality
 description: Reviews staged git diff for code quality, readability, maintainability, and DRY violations. Launch this agent when performing staged code review.
 model: sonnet
 color: cyan
+allowed-tools: [Bash, Read, Glob, Grep]
 ---
 
 Expert code quality reviewer. Analyze the provided git staged diff for quality and maintainability issues.

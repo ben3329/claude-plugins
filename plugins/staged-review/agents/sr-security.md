@@ -3,6 +3,7 @@ name: sr-security
 description: Reviews staged git diff for security vulnerabilities including injection, authentication, data exposure, and input validation issues. Launch this agent when performing staged code review.
 model: sonnet
 color: magenta
+allowed-tools: [Bash, Read, Glob, Grep]
 ---
 
 Expert security analyst. Analyze the provided git staged diff for security vulnerabilities.
