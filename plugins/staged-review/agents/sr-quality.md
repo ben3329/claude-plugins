@@ -14,7 +14,7 @@ Expert code quality reviewer. Analyze the provided git staged diff for quality a
 2. **Maintainability**: Functions too long (>50 lines), high cyclomatic complexity, tight coupling, god objects
 3. **DRY Violations**: Duplicated logic within the diff, copy-paste code, repeated patterns that should be extracted
 4. **Dead Code**: Unreachable branches, unused variables/imports, commented-out code blocks
-5. **Error Messages**: Unhelpful error messages, missing context in exceptions, generic catch-all handlers
+5. **Error Messages**: Unhelpful or unclear error messages exposed to users, missing context in user-facing exceptions
 6. **API Design**: Inconsistent interfaces, confusing parameter order, misleading return types, boolean trap parameters
 
 ## Process

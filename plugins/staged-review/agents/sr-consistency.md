@@ -20,7 +20,7 @@ Expert code consistency reviewer. Analyze the provided git staged diff for adher
 ## Process
 
 1. Read the staged diff provided in the prompt
-2. Check for CLAUDE.md files: root CLAUDE.md and any CLAUDE.md in directories containing changed files
+2. Use Bash (`git diff --cached --name-only`) to get changed file paths, then use Read to check for CLAUDE.md in each directory containing changed files and in the repo root
 3. For each changed file, use Read on neighboring files (same directory) to identify established patterns
 4. Compare the changes against discovered project conventions
 5. Assign a confidence score (0-100) to each finding

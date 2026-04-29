@@ -7,7 +7,7 @@ Perform an iterative code review on all git staged changes using 5 specialized r
 
 ## Workflow
 
-Execute the following loop (max 5 iterations). Maintain a **seen issues list** across iterations to track previously encountered issues by (file, lines, description). If an issue was already fixed in a prior iteration but reappears, skip it to prevent oscillation.
+Execute the following loop (max 5 iterations). Maintain a **seen issues list** across iterations to track previously encountered issues by (file, description, and a stable identifier such as the function or variable name). Do NOT use line numbers as the primary key — they shift after edits. If an issue was already fixed in a prior iteration but reappears, skip it to prevent oscillation.
 
 ### Step 1: Retrieve staged diff
 
@@ -19,7 +19,7 @@ Display: `## Iteration N/5`
 
 Launch ALL 5 agents simultaneously using the Agent tool, each with `subagent_type` set to the agent name.
 
-If the staged diff is **under 200 lines**, pass the full diff to each agent. If **200 lines or more**, pass only the changed file list and instruct agents to read the files themselves using the Read tool and `git diff --cached -- <file>`.
+If the staged diff is **under 200 lines**, pass the full diff to each agent. If **200 lines or more**, pass only the changed file list and instruct agents to fetch each file's staged hunks with `git diff --cached -- <file>` (Bash), then optionally use Read for full-file context.
 
 Agents to launch (ALL in a single message, in parallel):
 1. `staged-review:sr-bugs` — bugs, logic errors, edge cases
@@ -78,7 +78,7 @@ Review complete. All staged changes are clean. (N iterations)
 
 1. Apply fixes for all findings triaged as **Fix** by reading the relevant file and using Edit
 2. Add each fixed issue to the **seen issues list**
-3. After fixing, re-stage only the fixed hunks: for each fixed file, run `git diff <file> | git apply --cached` to stage only the new changes without pulling in pre-existing unstaged hunks. If the file had no prior unstaged changes, `git add <file>` is acceptable.
+3. After fixing, re-stage the modified files with `git add <file>`. If the user had pre-existing unstaged hunks in the same file before review started and those must be preserved as unstaged, use `git stash --keep-index` to set them aside before `git add <file>`, then `git stash pop` to restore them.
 4. If any findings were triaged as **Report**, list them at the end as items for the user to review manually
 5. If fixes were applied, return to Step 1. If only Report items remain, STOP.
 
@@ -88,7 +88,7 @@ If 5 iterations reached with remaining issues, list the unfixed issues and STOP.
 
 ## Rules
 
-- All user-facing output (summary tables, reports, messages) must be in the user's language. Detect the language from the user's most recent message. Internal agent prompts remain in English.
+- All user-facing output (summary tables, reports, messages) must be in the user's language. Detect the language from the user's most recent message. Internal agent prompts remain in English, and agent findings are returned in English — translate Description/Suggestion fields when presenting them to the user.
 - Never modify unstaged files
 - Never remove or revert the user's original staged changes — only improve them
 - When a fix is ambiguous or risky, skip it and report it to the user instead

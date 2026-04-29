@@ -1,6 +1,6 @@
 {
   "name": "staged-review",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Iterative code review loop for git staged changes using 5 specialized parallel review agents. Reviews, fixes, and repeats until clean.",
   "author": {
     "name": "ben3329"
