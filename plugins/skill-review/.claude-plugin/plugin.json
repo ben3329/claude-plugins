@@ -1,0 +1,8 @@
+{
+  "name": "skill-review",
+  "version": "1.0.0",
+  "description": "Iterative skill review loop using 4 specialized parallel review agents. Reviews discoverability, structure, clarity, and best practices, then fixes and repeats until clean.",
+  "author": {
+    "name": "ben3329"
+  }
+}

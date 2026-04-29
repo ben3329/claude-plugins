@@ -7,6 +7,7 @@ A collection of Claude Code plugins by ben3329.
 | Plugin | Description |
 |--------|-------------|
 | [staged-review](plugins/staged-review/) | Iterative code review loop for git staged changes using 5 specialized parallel review agents |
+| [skill-review](plugins/skill-review/) | Iterative quality review loop for Claude Code skills using 4 specialized parallel review agents |
 
 ## Installation
 
