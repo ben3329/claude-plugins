@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "A collection of Claude Code plugins by ben3329",
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   "plugins": [
     {
@@ -18,6 +18,12 @@
       "name": "skill-review",
       "description": "Iterative skill review loop using 4 specialized parallel review agents. Reviews discoverability, structure, clarity, and best practices, then fixes and repeats until clean.",
       "source": "./plugins/skill-review",
+      "category": "development"
+    },
+    {
+      "name": "plan-review",
+      "description": "한글 기능/서비스 기획서를 4개 병렬 에이전트로 리뷰합니다. 명확성, 완결성, 일관성, 실행가능성을 검토하고 리포트만 출력합니다.",
+      "source": "./plugins/plan-review",
       "category": "development"
     }
   ]
