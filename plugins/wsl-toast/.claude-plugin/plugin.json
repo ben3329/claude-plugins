@@ -1,0 +1,8 @@
+{
+  "name": "wsl-toast",
+  "version": "1.0.0",
+  "description": "WSL2에서 Claude Code 작업 완료/입력 대기 시 Windows 토스트 알림을 띄웁니다. 토스트를 클릭하면 해당 세션의 VSCode 창으로 포커스됩니다.",
+  "author": {
+    "name": "ben3329"
+  }
+}
