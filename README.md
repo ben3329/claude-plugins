@@ -6,8 +6,10 @@ A collection of Claude Code plugins by ben3329.
 
 | Plugin | Description |
 |--------|-------------|
-| [staged-review](plugins/staged-review/) | Iterative code review loop for git staged changes using 5 specialized parallel review agents |
+| [staged-review](plugins/staged-review/) | Iterative code review loop for git staged changes using 6 specialized parallel review agents with adaptive model tiering |
 | [skill-review](plugins/skill-review/) | Iterative quality review loop for Claude Code skills using 4 specialized parallel review agents |
+| [plan-review](plugins/plan-review/) | 한글 기능/서비스 기획서를 4개 병렬 에이전트로 리뷰 (명확성, 완결성, 일관성, 실행가능성) |
+| [wsl-toast](plugins/wsl-toast/) | WSL2에서 작업 완료/입력 대기 시 Windows 토스트 알림 + 클릭 시 VSCode 포커스 |
 
 ## Installation
 

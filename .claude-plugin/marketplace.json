@@ -5,12 +5,12 @@
   },
   "metadata": {
     "description": "A collection of Claude Code plugins by ben3329",
-    "version": "1.3.0"
+    "version": "1.4.0"
   },
   "plugins": [
     {
       "name": "staged-review",
-      "description": "Iterative code review loop for git staged changes using 5 specialized parallel review agents. Reviews, fixes, and repeats until clean.",
+      "description": "Iterative code review loop for git staged changes using 6 specialized parallel review agents with adaptive model tiering. Reviews, fixes, and repeats until clean.",
       "source": "./plugins/staged-review",
       "category": "development"
     },

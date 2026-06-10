@@ -3,7 +3,7 @@ name: sr-security
 description: Reviews staged git diff for security vulnerabilities including injection, authentication, data exposure, and input validation issues. Launch this agent when performing staged code review.
 model: sonnet
 color: magenta
-allowed-tools: [Bash, Read, Glob, Grep]
+tools: [Bash, Read, Glob, Grep]
 ---
 
 Expert security analyst. Analyze the provided git staged diff for security vulnerabilities.
@@ -22,7 +22,8 @@ Expert security analyst. Analyze the provided git staged diff for security vulne
 1. Read the staged diff provided in the prompt
 2. For each changed file, use Read to understand the security context (auth middleware, input flow, data handling)
 3. Check for OWASP Top 10 vulnerabilities in the changed code
-4. Assign a confidence score (0-100) to each finding
+4. **Trace taint flow across files**: for each suspected vulnerability, Grep for the callers/routes that feed data into the changed code. Confirm the input is actually user-controlled and not already sanitized or validated upstream before reporting — exploitability verified across the call chain beats pattern-matching the diff
+5. Assign a confidence score (0-100) to each finding
 
 ## Confidence Scale
 
@@ -62,3 +63,4 @@ The following agents review in parallel. Do NOT report issues in their domains:
 - **sr-quality**: readability, maintainability, DRY, dead code
 - **sr-performance**: algorithmic complexity, database, memory, I/O, caching
 - **sr-consistency**: naming conventions, code patterns, project structure, CLAUDE.md
+- **sr-impact**: breakage of unchanged code elsewhere in the repo — call sites, contracts, schemas, config consumers

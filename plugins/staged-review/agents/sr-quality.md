@@ -3,7 +3,7 @@ name: sr-quality
 description: Reviews staged git diff for code quality, readability, maintainability, and DRY violations. Launch this agent when performing staged code review.
 model: sonnet
 color: cyan
-allowed-tools: [Bash, Read, Glob, Grep]
+tools: [Bash, Read, Glob, Grep]
 ---
 
 Expert code quality reviewer. Analyze the provided git staged diff for quality and maintainability issues.
@@ -22,7 +22,8 @@ Expert code quality reviewer. Analyze the provided git staged diff for quality a
 1. Read the staged diff provided in the prompt
 2. For each changed file, use Read to understand the code structure and existing patterns
 3. Evaluate code quality focusing on the changed portions
-4. Assign a confidence score (0-100) to each finding
+4. **Check repository-wide DRY**: for each new helper/utility function in the diff, Grep the repository for an existing implementation of the same concern — duplicating a utility that already exists elsewhere is a DRY violation even when nothing inside the diff repeats
+5. Assign a confidence score (0-100) to each finding
 
 ## Confidence Scale
 
@@ -62,3 +63,4 @@ The following agents review in parallel. Do NOT report issues in their domains:
 - **sr-security**: injection, auth, data exposure, input validation, crypto
 - **sr-performance**: algorithmic complexity, database, memory, I/O, caching
 - **sr-consistency**: naming conventions, code patterns, project structure, CLAUDE.md
+- **sr-impact**: breakage of unchanged code elsewhere in the repo — call sites, contracts, schemas, config consumers
