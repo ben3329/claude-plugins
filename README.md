@@ -10,6 +10,7 @@ A collection of Claude Code plugins by ben3329.
 | [skill-review](plugins/skill-review/) | Iterative quality review loop for Claude Code skills using 4 specialized parallel review agents |
 | [plan-review](plugins/plan-review/) | 한글 기능/서비스 기획서를 4개 병렬 에이전트로 리뷰 (명확성, 완결성, 일관성, 실행가능성) |
 | [wsl-toast](plugins/wsl-toast/) | WSL2에서 작업 완료/입력 대기 시 Windows 토스트 알림 + 클릭 시 VSCode 포커스 |
+| [naming](plugins/naming/) | 앱·서비스 이름을 4개 전략별 생성 에이전트로 만들고 Neumeier 7기준+SMILE/SCRATCH로 랭킹, 도메인·상표·다국어 가용성까지 점검 |
 
 ## Installation
 
