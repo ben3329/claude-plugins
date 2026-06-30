@@ -6,6 +6,7 @@ A collection of Claude Code plugins by ben3329.
 
 | Plugin | Description |
 |--------|-------------|
+| [dokhae](plugins/dokhae/) | 국어 비문학 독해 훈련: 난이도별 지문 생성, 문제풀이·요약·속독, 기록 기반 약점 분석 |
 | [staged-review](plugins/staged-review/) | Iterative code review loop for git staged changes using 6 specialized parallel review agents with adaptive model tiering |
 | [skill-review](plugins/skill-review/) | Iterative quality review loop for Claude Code skills using 4 specialized parallel review agents |
 | [plan-review](plugins/plan-review/) | 한글 기능/서비스 기획서를 4개 병렬 에이전트로 리뷰 (명확성, 완결성, 일관성, 실행가능성) |

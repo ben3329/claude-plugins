@@ -5,9 +5,15 @@
   },
   "metadata": {
     "description": "A collection of Claude Code plugins by ben3329",
-    "version": "1.5.0"
+    "version": "1.6.0"
   },
   "plugins": [
+    {
+      "name": "dokhae",
+      "description": "국어 비문학 독해 훈련. Claude가 난이도별 지문을 생성해 문제풀이(사실·추론·구조·어휘·비판)·요약·속독(CPM 측정) 3가지 모드로 '정확하고 빠른 읽기'를 훈련하고, 정답률·읽기속도·약점을 기록해 다음 훈련에 반영합니다.",
+      "source": "./plugins/dokhae",
+      "category": "productivity"
+    },
     {
       "name": "staged-review",
       "description": "Iterative code review loop for git staged changes using 6 specialized parallel review agents with adaptive model tiering. Reviews, fixes, and repeats until clean.",
